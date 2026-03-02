@@ -1,0 +1,37 @@
+name: Cache zed-editor
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:          # manual trigger too
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - uses: cachix/cachix-action@v15
+        with:
+          name: mostlyk
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+
+      - name: Update flake inputs
+        run: nix flake update
+
+      - name: Build and push zed-editor
+        run: nix build .#default --print-build-logs
+
+      - name: Commit updated flake.lock
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add flake.lock
+          git diff --staged --quiet || git commit -m "chore: update flake.lock"
+          git push
