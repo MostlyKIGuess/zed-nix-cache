@@ -132,11 +132,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1784274148,
-        "narHash": "sha256-sJrxckkdMLweKMuXnKPg8YSAcArQl6tWm2iPONHweTo=",
+        "lastModified": 1784288468,
+        "narHash": "sha256-XvMIVGb+AO0erD61daPj+/+4vYJJnbhPJv3aIBoTekA=",
         "owner": "zed-industries",
         "repo": "zed",
-        "rev": "aa42d3adce0f85abec817d99124b4cedb6d5f359",
+        "rev": "1d2a4b3f7f194184dccadfa7a091d16a06482752",
         "type": "github"
       },
       "original": {
