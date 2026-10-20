@@ -132,15 +132,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1792458830,
-        "narHash": "sha256-bmiJDVbxB4ExJzCVx9iYeTpVoCZ1iVYuWrU+11v6vK8=",
-        "owner": "zed-industries",
+        "lastModified": 1792478044,
+        "narHash": "sha256-/UCizMevmDIweYc4/oObMkJBIA5BzIivmEvN0kkdhJk=",
+        "owner": "MostlyKIGuess",
         "repo": "zed",
-        "rev": "e39fb7c2e0560d013df0e77bce1922bf5cce1ad9",
+        "rev": "60e8b6b10609f6ba9e27c2ec75383a67d5236795",
         "type": "github"
       },
       "original": {
-        "owner": "zed-industries",
+        "owner": "MostlyKIGuess",
+        "ref": "latex-math-on-main",
         "repo": "zed",
         "type": "github"
       }
