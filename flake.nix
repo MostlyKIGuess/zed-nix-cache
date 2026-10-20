@@ -2,7 +2,7 @@
   description = "Cached Zed editor builds";
 
   inputs = {
-    zed.url = "github:zed-industries/zed";
+    zed.url = "github:MostlyKIGuess/zed/latex-math-on-main";
     flake-utils.url = "github:numtide/flake-utils";
   };
 

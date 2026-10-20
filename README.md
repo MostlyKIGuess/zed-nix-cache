@@ -1,11 +1,9 @@
 First things first, thank you to [original repo](https://github.com/jcdickinson/zed-cached/tree/main).
 
 
-## Future Plans
+## What this builds
 
-> I plan to change this to have my own version of Zed soon with C++ based PDF-Viewer and other features that I have on my branches of Zed, which am not sure Zed would have ;D. 
-
-But for now it will be nightly from the upstream Zed.
+Zed `main` with my LaTeX math rendering for the Markdown preview merged in, from [zed-industries/zed#54668](https://github.com/zed-industries/zed/pull/54668). Once that PR is merged upstream, this goes back to plain Zed `main`.
 
 # Usage
 
@@ -42,12 +40,10 @@ nix run github:mostlykiguess/zed-nix-cache
 
 ## How it works
 
-A GitHub Action runs every 6 hours to check for new stable Zed releases. When a new release is found:
+A GitHub Action runs every Tuesday, and can also be started by hand:
 
-- Creates a branch zed-{version}
-- Updates flake.lock to pin to that release
+- Merges the `latex-math` branch onto the latest Zed `main` and pushes the result to the `latex-math-on-main` branch of my fork. If the merge conflicts, the branch keeps the last good merge.
+- Updates `flake.lock` to that branch
 - Builds the package for x86_64-linux
 - Pushes the build to Cachix
-- Updates the stable branch
-
-The stable branch always points to the latest stable Zed release with pre-built binaries available in Cachix.
+- Commits the new `flake.lock`
