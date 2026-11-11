@@ -23,6 +23,7 @@ jobs:
         with:
           name: mostlyk
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          pushFilter: 'zed-editor-deps'
 
       - name: Merge latex-math onto zed main
         working-directory: ${{ runner.temp }}
